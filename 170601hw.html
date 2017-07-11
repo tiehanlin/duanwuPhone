@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/animate.min.css" type="text/css" />
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" type="text/css" />
+		<style>
+			*{margin: 0;padding: 0;}
+			body,html{height: 100%;font-size: 10px;}
+			.swiper-container{height: 100%;}
+			.swiper-container .swiper-wrapper .swiper-slide{height: 100%;background: url(images/bg.jpg) no-repeat;background-size: cover;}
+			.one .img01{position: absolute;top: 10rem;left: 7rem;width: 90%;}
+			.one .img02{position: absolute;top: 24rem;right: 0;width: 70%;}
+			.one .img03{position: absolute;top: 54rem;right: 40rem;width: 30%;}
+			.one .img04{position: absolute;top: 52rem;right: 20rem;width: 30%;-webkit-transform: rotate(35deg);transform: rotate(35deg);}
+			.one .img05{position: absolute;bottom: 0;width: 100%;}
+		</style>
+		<style>
+			.img06{position: absolute;top: 0;left: 0;width: 60%;}
+			.img07{position: absolute;top: 0;right: -13rem;width: 80%;}
+			.img08{position: absolute;top: 50rem;left: 20rem;width: 50%;}
+			.towP{position: absolute;top: 90rem;left: 5rem;font-size: 10rem;font-family: "微软雅黑";text-align: center;color:#3BBC1E ;font-weight: bolder;}
+			.img09{position: absolute;bottom: 0;left:0;width: 100%;}
+		</style>
+		<style>
+			.img10{position: absolute;top:50rem;left:20rem;width: 50%;}
+			.img11{position: absolute;bottom:0;left:0;width:100%;}
+		</style>
+	</head>
+	<body>
+		<div class="swiper-container" id="swi01">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide one">
+			        	<img src="images/16.jpg" class="img01 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s"/>
+			        	<img src="images/09.jpg" class="img02 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"/>
+			        	<img src="images/18.jpg" class="img03 ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"/>
+			        	<img src="images/17.jpg" class="img04 ani" style="transform: rotate(35deg);" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"/>
+			        	<img src="images/04.jpg" class="img05 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s"/>
+			        </div>
+			        <div class="swiper-slide tow" >
+			        	<img src="images/01.jpg" class="img06 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s"/>
+			        	<img src="images/03.jpg" class="img07 ani"  swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"/>
+			        	<img src="images/02.jpg" class="img08 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"/>
+			        	<p class="towP ani"  swiper-animate-effect="rollIn" swiper-animate-duration="1.5s" swiper-animate-delay="2s">端午节祝你幸福美满</p>
+			       		<img src="images/11.jpg" class="img09 ani" swiper-animate-effect="slideInUp" swiper-animate-duration="1.5s" swiper-animate-delay="2.5s"/>
+			        </div>
+			        <div class="swiper-slide three">
+			        	<img src="images/01.jpg" class="img06 ani" swiper-animate-effect="slideInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s"/>
+			        	<img src="images/03.jpg" class="img07 ani"  swiper-animate-effect="slideInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"/>
+			        	<img src="images/10.jpg" class="img10 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1.5s" swiper-animate-delay="1s"/> 
+			        	<p class="towP ani"  swiper-animate-effect="rollIn" swiper-animate-duration="1.5s" swiper-animate-delay="2s">端午节祝你合家欢乐</p>
+			        	<img src="images/19.gif" class="img11 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="2.5s"/>
+			        </div>
+			    </div>
+			    <!-- 如果需要分页器 -->
+			    <div class="swiper-pagination"></div>
+
+		</div>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/swiper-3.4.2.jquery.min.js"></script>
+		<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+		<script>        
+			  var mySwiper = new Swiper ('#swi01', {
+			    direction: 'vertical',
+			    //loop: true,
+			    
+			    // 如果需要分页器
+			    pagination: '.swiper-pagination',
+			    
+			     onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+				    swiperAnimateCache(swiper); //隐藏动画元素 
+				    swiperAnimate(swiper); //初始化完成开始动画
+				  }, 
+				  onSlideChangeEnd: function(swiper){ 
+				    swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				  } 
+			  })        
+  </script>
+	</body>
+</html>
